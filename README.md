@@ -41,6 +41,7 @@ Ex M671 X###:###:### Y###:###:### S##
 
 -Define probe points with P#
 The S parameter is the number of probe points(should match the number of independent steppers)
+
 G30 P0 X55 Y161 Z-99999			; Probe near left lead screw position
 
 G30 P1 X328 Y301 Z-99999 S2			; Probe near right rear lead screw position
