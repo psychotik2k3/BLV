@@ -37,12 +37,22 @@ Ex M671 X###:###:### Y###:###:### S##
 - If you have 3 or 4 Z motors, in bed.g use at least one probe point close to each leadscrew.   
 - If you have 2 Z motors, one at each end of the X axis, then set the Y coordinates of the leadscrews in the M671 command to be equal (the value doesn't matter, so you can use zero). Use at least two probe points, one at each end of the X axis. All your probe points should have the same Y coordinate, which should be at or near the middle of the printable range.
 
-Dual Z motors   
-1.  Define physical leadscrew coordinates. They should be out of your printable range.
-M671 X-48.5:360 Y150:150 S10    
+Dual Z steppers
+1. Assign the 2nd stepper
+  * A. *Duet 2 Wifi*
+    * Will use the open E1 driver. Define it in config.g as ```M584 Z2:4```
+    * Ensure you put the 2 jumpers on the 2nd Z port
+  * B. Duet 3 
+    * Define the driver in config.g ```M584 Z0.3:0.4```
+2.  Define physical leadscrew coordinates. They should be out of your printable range.
+  * A. *Duet 2 Wifi*
+    * M671 X-48.5:360 Y150:150 S10    
+    * The order the coordinates appear are important. The stepper located at -48.5,150 must be connected to driver 3 and the stepper located at 360,150 must be connected to driver 4   
 
--Define probe points with P#    
-The S parameter is the number of probe points(should match the number of independent steppers)
+# bed.g 
+- G30 defines where the head will probe to calculate the offset.
+- Define probe points with P#    
+- The S parameter is the number of probe points(should match the number of independent steppers)
 
 G30 P0 X55 Y161 Z-99999			; Probe near left lead screw position   
 G30 P1 X328 Y301 Z-99999 S2			; Probe near right rear lead screw position   
