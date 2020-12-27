@@ -11,12 +11,12 @@ G1 Z10 H0 F2000					; Making sure we're not going to hit the side of glass
 G91								; Set to relative position
 G28								; home all axis
 M557 X30:270 Y30:270 P4			; Define mesh grid
-G30 P0 X55 Y161 Z-99999			; Probe near left lead screw position -65,166
-G30 P1 X328 Y301 Z-99999 S2			; Probe near right rear lead screw position 364,25
-G28								; Rehome the printer
-G30 P0 X55 Y161 Z-99999			; Probe near left lead screw position -65,166
-G30 P1 X328 Y301 Z-99999			; Probe near right rear lead screw position 364,25
-G28								; Rehome the printer
+;G30 P0 X55 Y161 Z-99999			; Probe near left lead screw position -65,166
+;G30 P1 X328 Y161 Z-99999 S2			; Probe near right rear lead screw position 364,25
+;G28								; Rehome the printer
+;G30 P0 X55 Y161 Z-99999			; Probe near left lead screw position -65,166
+;G30 P1 X328 Y161 Z-99999			; Probe near right rear lead screw position 364,25
+;G28								; Rehome the printer
 G29								; Probe the bed and save height map to file
 M291 P"Probing mesh grid process finished !" R"Finished.." S1 T2
 M374 							; Save calibration data. Default is sys/heightmap.csv
