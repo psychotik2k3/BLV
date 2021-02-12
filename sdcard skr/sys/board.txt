@@ -33,3 +33,7 @@ stepper.numSmartDrivers = 5;
 
 // External Display settings
 serial.aux.rxTxPins = {0.3, 0.2};
+
+// end stops
+//endstop.pins = {1,29, 1,27};
+//zProbe.pin = 1,26;

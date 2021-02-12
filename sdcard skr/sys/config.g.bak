@@ -55,15 +55,7 @@ M143 H0 S120                                     ; set temperature limit for hea
 ;M143 H0 S120                                     ; set temperature limit for heater 0 to 120C
 ;M308 S1 P"e0temp" Y"thermistor" T2500000 B6848   ; configure sensor 1 as thermistor on pin e0temp
 ;M308 S1 P"e0temp" Y"thermistor" T2500000 B2260 C-5.253069e-7   ; configure sensor 1 as thermistor on pin e0temp
-
-; mellow 450 degres thermistor
-M308 S1 P"e0temp" Y"thermistor" T3600000 B6453 C9.932858e-8   ; configure sensor 1 as thermistor on pin e0temp
-;M308 S1 P"e0temp" Y"thermistor" T3600000 B5077    ; configure sensor 1 as thermistor on pin e0temp
-
-; original thermistor with lite kit
-;M308 S1 P"e0temp" Y"thermistor" T100000 B4092   ; configure sensor 1 as thermistor on pin e0temp
-;M308 S1 L-127									; low offset calibration to match more multimeter temp at 220-240 degres
-
+M308 S1 P"e0temp" Y"thermistor" T100000 B4092   ; configure sensor 1 as thermistor on pin e0temp
 M950 H1 C"e0heat" T1                             ; create nozzle heater output on e0heat and map it to sensor 1
 M307 H1 B0 S1.00                                 ; disable bang-bang mode for heater  and set PWM limit
 M143 H1 S280                                     ; set temperature limit for heater 1 to 280C
