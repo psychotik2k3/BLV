@@ -1,0 +1,15 @@
+echo move.axes[0].homed, move.axes[1].homed, move.axes[2].homed
+echo (move.axes[0].homed=false || move.axes[1].homed=false || move.axes[2].homed=false) 
+	
+if (move.axes[0].homed=false || move.axes[1].homed=false || move.axes[2].homed=false) 
+	M98 P"homeall.g"
+M400
+G0 Z25
+M400
+G0 X150 Y150
+G0 X30 Y10
+M400
+echo "Cleaning Bed Mesh"
+G29 S2
+echo "Launching new mesh bed" 
+G29

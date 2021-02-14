@@ -1,0 +1,40 @@
+echo move.axes[0].homed, move.axes[1].homed, move.axes[2].homed
+echo (move.axes[0].homed=false || move.axes[1].homed=false || move.axes[2].homed=false) 
+	
+if (move.axes[0].homed=false || move.axes[1].homed=false || move.axes[2].homed=false) 
+	M98 P"homeall.g"
+
+G90
+M400
+G0 Z25
+M400
+G0 X300 Y 273 F6000
+	M400
+	echo "fond droite" 
+	G30 S-1
+	G1 Z15 F600
+	G30 S-1
+	G1 Z15 F600
+
+G0 X58 Y273 F6000
+M400
+	echo "fond gauche"
+	G30 S-1
+	G1 Z15 F600
+	G30 S-1
+	G1 Z15 F600
+G0 X58 Y31 F6000
+M400
+	echo "devant gauche"
+	G30 S-1
+	G1 Z15 F600
+	G30 S-1
+	G1 Z15 F600
+G0 X300 Y31 F6000
+M400
+echo "devant droite"
+	G30 S-1
+	G1 Z15 F600
+	G30 S-1
+	G1 Z15 F600
+G0 X175 Y175 Z30 F6000

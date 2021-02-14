@@ -1,0 +1,13 @@
+;X30:320 Y31:311
+if (move.axes[0].homed=false || move.axes[1].homed=false || move.axes[2].homed=false) 
+	M98 P"homeall.g"
+G90
+G0 Z40
+G0 X175 Y175
+while true
+	if iterations = 5
+    	break
+	G0 X30 Y31 F18000
+    G0 X30 Y311
+    G0 X320 Y311
+    G0 X320 Y31

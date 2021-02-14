@@ -1,0 +1,8 @@
+if move.axes[2].homed=false
+	G1 Z25 F600
+	G30
+while true
+	if iterations = 5
+    	abort "Too many auto calibration attempts"
+	G1 Z15 F600
+	G30 S-1

@@ -1,0 +1,8 @@
+G91 
+G0 Z 25		; on baisse le plateau quoi qu'il en soit
+G90
+G28 X		;on home le X
+G0 X 150
+G28 Y
+G0 Y 150
+G30

@@ -37,3 +37,7 @@ serial.aux.rxTxPins = {0.3, 0.2};
 // end stops
 //endstop.pins = {1,29, 1,27};
 //zProbe.pin = 1,26;
+
+//diagnostic pins
+//stepper.TmcDiagPins = {(pin 0), (pin 1), ...}
+stepper.TmcDiagPins = { 1.29 1.27 NoPin NoPin NoPin }
