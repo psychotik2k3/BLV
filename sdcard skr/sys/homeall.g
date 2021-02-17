@@ -7,12 +7,15 @@ G1 H2 Z30 F6000        ; lift Z relative to current position
 G1 H1 X-315 Y315 F1800 ; move quickly to X or Y endstop and stop there (first pass)
 G1 H1 X-315            ; home X axis
 G1 H1 Y315            ; home Y axis
-G1 X5 Y-5 F6000      ; go back a few mm
+G1 X5 Y-5 F3600      ; go back a few mm
 G1 H1 X-315 F360       ; move slowly to X axis endstop once more (second pass)
 G1 H1 Y315            ; then move slowly to Y axis endstop
 ;G1 Z 25 F6000
 G90
-G1 X 175 Y 175 F6000
+G1 X 175 Y 175 F3600
+;G0  X59 Y55 F2400
+;M98 P"/macros/move_probe_to_nozzle"
+
 ;G1 X {move.axes[0].min + ((move.axes[0].max-move.axes[0].min)/2)} Y {move.axes[1].min + ((move.axes[1].max-move.axes[0].min)/2)} F1800
 G30
 ;G1 H1 Z-370 F360      ; move Z down stopping at the endstop;
@@ -21,7 +24,7 @@ G30
 
 ; Uncomment the following lines to lift Z after probing
 ;G91                  ; relative positioning
-G1 Z15 F1800           ; lift Z relative to current position
+G1 Z25 F1800           ; lift Z relative to current position
 ;G90                  ; absolute positioning
-
+;M98 P"/macros/move_nozzle_to_probe"
 

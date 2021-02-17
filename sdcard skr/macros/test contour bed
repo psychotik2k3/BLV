@@ -5,9 +5,59 @@ G90
 G0 Z40
 G0 X175 Y175
 while true
-	if iterations = 5
+    break
+	if iterations = 1
     	break
-	G0 X30 Y31 F18000
+	G0 X30 Y31 F2400
+    G0 X175 Y175
     G0 X30 Y311
     G0 X320 Y311
+    G0 X175 Y175
+    G0 X320 Y31
+while true
+	if iterations = 2
+    	break
+	G0 X30 Y31 F3600
+    G0 X175 Y175
+    G0 X30 Y311
+    G0 X320 Y311
+    G0 X175 Y175
+    G0 X320 Y31
+while true
+	if iterations = 1
+	G0 X30 Y31 F4800
+    G0 X175 Y175
+    G0 X30 Y311
+    G0 X320 Y311
+    G0 X175 Y175
+    G0 X320 Y31
+while true
+    break
+	if iterations = 2
+    	break
+	G0 X30 Y31 F6000
+    G0 X175 Y175
+    G0 X30 Y311
+    G0 X320 Y311
+    G0 X175 Y175
+    G0 X320 Y31
+while true
+    break
+	if iterations = 2
+    	break
+	G0 X30 Y31 F9000
+    G0 X175 Y175
+    G0 X30 Y311
+    G0 X320 Y311
+    G0 X175 Y175
+    G0 X320 Y31
+while true
+    break
+	if iterations = 2
+    	break
+	G0 X30 Y31 F12000
+    G0 X175 Y175
+    G0 X30 Y311
+    G0 X320 Y311
+    G0 X175 Y175
     G0 X320 Y31
