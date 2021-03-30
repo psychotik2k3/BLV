@@ -19,7 +19,10 @@ else
 	G91                   ; relative positioning
 	G1 H2 Z30 F6000        ; lift Z relative to current position
 	G90
+	if heat.heaters[1].current>55 ;we wipe to avoid oozing
+		M98 P"/macros/wipe"
 	G1 X 175 Y 175 F6000
+
 	;G1 X {move.axes[0].min + ((move.axes[0].max-move.axes[0].min)/2)} Y {move.axes[1].min + ((move.axes[1].max-move.axes[0].min)/2)} F1800
 	G30
 	;G1 H1 Z-370 F360      ; move Z down stopping at the endstop;
@@ -30,5 +33,3 @@ else
 	;G91                  ; relative positioning
 	G1 Z15 F1800           ; lift Z relative to current position
 	;G90                  ; absolute positioning
-
-

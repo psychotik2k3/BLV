@@ -15,6 +15,9 @@ G90
 G1 X 175 Y 175 F3600
 ;G0  X59 Y55 F2400
 ;M98 P"/macros/move_probe_to_nozzle"
+if heat.heaters[1].current>55 ;we wipe to avoid oozing
+	M98 P"/macros/wipe"
+	G1 X 175 Y 175 F3600
 
 ;G1 X {move.axes[0].min + ((move.axes[0].max-move.axes[0].min)/2)} Y {move.axes[1].min + ((move.axes[1].max-move.axes[0].min)/2)} F1800
 G30
@@ -27,4 +30,3 @@ G30
 G1 Z25 F1800           ; lift Z relative to current position
 ;G90                  ; absolute positioning
 ;M98 P"/macros/move_nozzle_to_probe"
-

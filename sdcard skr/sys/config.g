@@ -26,12 +26,15 @@ M569 P3 S0  D3                                   ; physical drive 3 goes forward
 M569 P4 S0  D3                                   ; physical drive 4 goes forwards using default driver timings
 M584 X0 Y1 Z2:4 E3                               ; set drive mapping
 M350 X16 Y16 Z16 E16 I1                          ; configure microstepping with interpolation
-M92 X200.00 Y200.00 Z400.00 E436.54         	 ; set steps per mm
-M566 X699.60 Y699.60 Z240.00 E120.00       		 ; set maximum instantaneous speed changes (mm/min)
+;M92 X200.00 Y200.00 Z400.00 E436.54         	 ; set steps per mm
+M92 X200.00 Y200.00 Z400.00 E424.91         	 ; set steps per mm
+
+M566 X700 Y700 Z24.00 E2000.00       		 	 ; set maximum instantaneous speed changes (mm/min)
+;M566 X600 Y600 Z12 E2000						 ; from krazycubekreator discord
 M203 X18000.00 Y18000.00 Z999.60 E1200.00 		 ; set maximum speeds (mm/min)
 M201 X3000.00 Y3000.00 Z100.00 E4000.00			 ; set accelerations (mm/s^2)
 M906 X1400 Y1400 Z1400 E1400 I30      	             ; set motor currents (mA) and motor idle factor in per cent
-M84 S30                                          ; Set idle timeout
+M84 S120                                          ; Set idle timeout
 
 ; Axis Limits
 M208 X0 Y0 Z0 S1                                 ; set axis minima
@@ -49,15 +52,21 @@ M915 P2:4 S-30 F0 R0
 ; offset Y +21.5mm
 M558 P5 C"ystopmax" H5 F120 T3600 A2              ; set Z probe type to modulated and the dive height + speeds
 ;M558 H30                                         ;*** Remove this line after delta calibration has been done and new delta parameters have been saved
-G31 P500 X26.6 Y40.1 Z1.65                           ; set Z probe trigger value, offset and trigger height
+;G31 P500 X26.6 Y40.1 Z1.65                           ; set Z probe trigger value, offset and trigger height
+G31 P500 X26.6 Y40.1 Z2.25 
 ;M557 X30:320 Y31:311 S29:28                       ; define mesh grid, warning nozzle coordinates
-M557 X30:320 Y41:311 S29:27                       ; define mesh grid, warning nozzle coordinates
+M557 X30:320 Y41:311 S29:27                       ; define mesh grid, warning nozzle coordinates 10x10 points
+;M557 X30:321 Y41:311 S97:90                       ; define mesh grid, warning nozzle coordinates 4x4 points
+;M557 X30:321 Y41:311 S72.5:67.5                       ; define mesh grid, warning nozzle coordinates 5x5 points
+;M557 X30:320 Y41:311 S5:5  ; mesh point every 5mm
 
 ; Heaters
-M308 S0 P"bedtemp" Y"thermistor" T100000 B4092   ; configure sensor 0 as thermistor on pin bedtemp
+M308 S0 P"e1temp" Y"thermistor" T10000 B3435   ; configure sensor 1 as thermistor on pin e0temp
+M308 S2 P"bedtemp" Y"thermistor" T100000 B4092   ; configure sensor 0 as thermistor on pin bedtemp
 M950 H0 C"bed" T0                                ; create bed heater output on bed and map it to sensor 0
 ;M307 H0 B0 S1.00                                ; disable bang-bang mode for the bed heater and set PWM limit
-M307 H0 R0.456 C306.9 D8.99 S1.00 V24			 ; from autotune
+M307 H0 R0.456 C306.9 D8.99 S1.00 V24			 ; from autotune kit heatbed thermistor
+M307 H0 R0.144 C1315.8 D38.57 S1.00 V0.0			 ; from autotune kit new bed and pc thin thermistor
 M140 H0                                          ; map heated bed to heater 0
 M143 H0 S120                                     ; set temperature limit for heater 0 to 120C
 ;M143 H0 S120                                    ; set temperature limit for heater 0 to 120C
@@ -72,16 +81,18 @@ M308 S1 P"e0temp" Y"thermistor" T3600000 B6453 C9.932858e-8   ; configure sensor
 ;M308 S1 P"e0temp" Y"thermistor" T100000 B4092   ; configure sensor 1 as thermistor on pin e0temp
 ;M308 S1 L-127									 ; low offset calibration to match more multimeter temp at 220-240 degres
 
+
+
 M950 H1 C"e0heat" T1                             ; create nozzle heater output on e0heat and map it to sensor 1
 ;M307 H1 B0 S1.00                                 ; disable bang-bang mode for heater  and set PWM limit
 M307 H1 B0 R2.508 C160.6 D4.58 S1.00 V0.0
 M143 H1 S280                                     ; set temperature limit for heater 1 to 280C
 
 ; Fans
-M950 F0 C"e1heat" Q500
+M950 F0 C"e1heat" Q32
 M106 P0 S0 H-1
 
-M950 F1 C"fan0" Q500                             ; create fan 0 on pin fan0 and set its frequency
+M950 F1 C"fan0" Q32                             ; create fan 0 on pin fan0 and set its frequency
 M106 P1 S0 H1 T45                                ; set fan 0 value. Thermostatic control is turned on
 
 
@@ -98,7 +109,8 @@ M575 P1 S3 B57600                           ; enable support for tft
 M570 H0 P15
 
 ;set screws position
-M671 X295:59:59:295 Y299:299:55:55 P0.7
+;M671 X295:59:59:295 Y299:299:55:55 P0.7	; for manual screw positionning
+M671 X396:-38 Y177:177 S3				; for auto dual Z bed leveling
 
 M564 S1 H0                                  ; a supprimer apres permet de bouger sans faire home d'abord
 M302 P1                                     ; allow extrude with cold temperature
