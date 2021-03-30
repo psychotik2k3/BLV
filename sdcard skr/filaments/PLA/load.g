@@ -1,5 +1,5 @@
 if heat.heaters[1].current<200
-	echo Temperature is too cold heat to 200 degres first
+	echo "Temperature is too cold heat to 200 degres first"
     abort
 else
 	M400				;Wait for current moves to finish

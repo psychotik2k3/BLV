@@ -17,8 +17,10 @@ M586 P1 S0                                       ; disable FTP
 M586 P2 S0                                       ; disable Telnet
 
 ; Drives
-M569 P0 S0	D3 V0								 ; physical drive 0 goes forwards using default driver timings
-M569 P1 S1  D3 V0                                ; physical drive 1 goes forwards using default driver timings
+;M569 P0 S0	D3 V10								 ; physical drive 0 goes forwards using default driver timings
+;M569 P1 S1  D3 V10                                ; physical drive 1 goes forwards using default driver timings
+M569 P0 S0	D2   								 ; physical drive 0 goes forwards using default driver timings
+M569 P1 S1  D2                                   ; physical drive 1 goes forwards using default driver timings
 M569 P2 S0  D3                                   ; physical drive 2 goes forwards using default driver timings
 M569 P3 S0  D3                                   ; physical drive 3 goes forwards using default driver timings
 M569 P4 S0  D3                                   ; physical drive 4 goes forwards using default driver timings
@@ -100,5 +102,7 @@ M671 X295:59:59:295 Y299:299:55:55 P0.7
 
 M564 S1 H0                                  ; a supprimer apres permet de bouger sans faire home d'abord
 M302 P1                                     ; allow extrude with cold temperature
+
+;M593 F20									; cancel ringing frequency 20 hz 80mm/sec / 4mm
 
 T0											; select tool 0

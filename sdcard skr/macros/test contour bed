@@ -1,11 +1,11 @@
 ;X30:320 Y31:311
 if (move.axes[0].homed=false || move.axes[1].homed=false || move.axes[2].homed=false) 
-	M98 P"homeall.g"
+	G28
 G90
 G0 Z40
 G0 X175 Y175
 while true
-    break
+    ;break
 	if iterations = 1
     	break
 	G0 X30 Y31 F2400
@@ -15,7 +15,7 @@ while true
     G0 X175 Y175
     G0 X320 Y31
 while true
-	if iterations = 2
+	if iterations = 1
     	break
 	G0 X30 Y31 F3600
     G0 X175 Y175
@@ -25,6 +25,7 @@ while true
     G0 X320 Y31
 while true
 	if iterations = 1
+    	break
 	G0 X30 Y31 F4800
     G0 X175 Y175
     G0 X30 Y311
@@ -32,8 +33,8 @@ while true
     G0 X175 Y175
     G0 X320 Y31
 while true
-    break
-	if iterations = 2
+    ;break
+	if iterations = 1
     	break
 	G0 X30 Y31 F6000
     G0 X175 Y175
@@ -42,8 +43,8 @@ while true
     G0 X175 Y175
     G0 X320 Y31
 while true
-    break
-	if iterations = 2
+    ;break
+	if iterations = 1
     	break
 	G0 X30 Y31 F9000
     G0 X175 Y175
@@ -52,8 +53,8 @@ while true
     G0 X175 Y175
     G0 X320 Y31
 while true
-    break
-	if iterations = 2
+    ;break
+	if iterations = 1
     	break
 	G0 X30 Y31 F12000
     G0 X175 Y175
