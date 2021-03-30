@@ -1,0 +1,7 @@
+G0 Z40
+G91
+G0 X0 Y50
+G90
+G0 Z0
+M291 S3 Z1 P"Ok to go to next point, cancel to abort"
+G0 Z40

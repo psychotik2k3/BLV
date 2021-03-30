@@ -1,0 +1,21 @@
+if (move.axes[2].homed=false) 
+	G28 Z
+G30 S-2 X295 Y55 Z-99999
+G30 P0 X295 Y55 Z-99999 ; probe front right
+G30 P1 X59 Y55 Z-99999 ; probe front left
+G30 P2 X59 Y299 Z-99999 ; probe far left
+G30 P3 X295 Y304 Z-99999 ; probe far right
+
+G30 P4 X314 Y177 Z-99999 ; probe near a leadscrew, half way along Y axis
+G30 P4 X326 Y177 Z-99999 ; probe near a leadscrew, half way along Y axis
+G30 P5 X226 Y177 Z-99999 ; probe near a leadscrew and calibrate 2 motors
+G30 P6 X128 Y177 Z-99999 ; probe near a leadscrew and calibrate 2 motors
+G30 P7 X40 Y177 Z-99999 ; probe near a leadscrew and calibrate 2 motors
+G30 P8 X28 Y177 Z-99999 S-1; probe near a leadscrew and calibrate 2 motors
+
+
+;G0 X28 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+;M98 P"/macros/probe_micrometre"
+
+G0 X175 Y175 Z40 F4800
+

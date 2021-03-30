@@ -1,0 +1,69 @@
+if (move.axes[2].homed=false) 
+	G28 Z 
+M98 P"/macros/probe_micrometre"
+G0 Z40 F4800
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+
+G0 X326 Y177 Z40 ; probe near a leadscrew, half way along Y axis
+M98 P"/macros/probe_micrometre"
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+G0 X252 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+G0 177 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+G0 X102 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+G0 X28 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+;G0 X28 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+;M98 P"/macros/probe_micrometre"
+
+
+G0 X28 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X58 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X88 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X118 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X148 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X178 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X208 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X238 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X268 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X298 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+G0 X326 Y177 Z40 ; probe near a leadscrew and calibrate 2 motors
+M98 P"/macros/probe_micrometre"
+
+G0 X295 Y55 Z40 ; probe front right
+M98 P"/macros/probe_micrometre"
+
+
+
+
+G0 X175 Y175 Z40 F4800
+

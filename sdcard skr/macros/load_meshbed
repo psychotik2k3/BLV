@@ -1,0 +1,14 @@
+M98 P"/macros/wipe"
+if heat.heaters[1].current>295
+	echo "loading heightmap_abs" 
+	G29 S1 P"heightmap_abs.csv"
+elif heat.heaters[1].current>275
+	echo "loading heightmap_PETG"
+	G29 S1 P"heightmap_petg.csv"
+elif heat.heaters[1].current>255
+	echo "loading heightmap_pla"
+	G29 S1 P"heightmap_pla.csv"
+else
+	echo "loading heightmap_cold"
+	;G29 S1 P"heightmap_cold.csv"
+	G29 S0

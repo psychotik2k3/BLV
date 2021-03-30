@@ -1,0 +1,23 @@
+G28 Z
+G0 X295 Y299 Z30 ; probe far right
+G0 Z0
+M291 S3 Z1 P"Ok to go to next point, cancel to abort"
+G0 Z30
+G0 X59 Y299 Z30 ; probe far left
+G0 Z0
+M291 S3 Z1 P"Ok to go to next point, cancel to abort"
+G0 Z30
+G0 X59 Y55 Z30 ; probe front left
+G0 Z0
+M291 S3 Z1 P"Ok to go to next point, cancel to abort"
+G0 Z30
+G0 X295 Y55 Z30 ; probe near an adjusting screw and report adjustments needed
+G0 Z0
+M291 S3 Z1 P"Ok to go to next point, cancel to abort"
+G0 Z30
+;G0 X326 Y177 Z30 ; probe near a leadscrew, half way along Y axis
+;M98 P"/macros/probe_micrometre"
+;G0 X28 Y177 Z30 ; probe near a leadscrew and calibrate 2 motors
+;M98 P"/macros/probe_micrometre"
+G0 X175 Y175 Z40 F4800
+

@@ -6,3 +6,4 @@ while true
     	abort "Too many auto calibration attempts"
 	G1 Z15 F600
 	G30 S-1
+    G4 S5

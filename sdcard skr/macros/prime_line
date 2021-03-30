@@ -1,0 +1,13 @@
+G0 X20 Y23 Z25 F4800
+G1 Z3 F720
+G1 E1 F700
+;M109 S[first_layer_temperature] ; wait for extruder temp
+;G4 S2
+; intro line
+G92 E0 ; reset extrusion distance
+G1 Z0.2 F720
+G1 X24 E1
+G1 X90.0 E9.0  F1000.0 ; priming
+G1 X130.0 E12.5  F1000.0 ; priming
+G4 S2
+G92 E0.0

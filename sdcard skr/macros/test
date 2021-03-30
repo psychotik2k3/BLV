@@ -1,0 +1,9 @@
+; Move print head up
+while ((move.axes[2].userPosition+5) <move.axes[2].max)
+	if iterations = 6
+		echo "exiting loop"
+    	break
+	echo "moving up 5mm"
+	G1 Z{move.axes[2].userPosition+5}	
+;G1 X{move.axes[0].min+10} Y{move.axes[1].max+10} F4200 ; park print head
+G4 ; wait

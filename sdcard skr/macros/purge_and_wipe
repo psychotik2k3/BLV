@@ -1,0 +1,12 @@
+; we home if not homed yet
+if (move.axes[2].homed=false) 
+	G28 Z
+G90
+G0 Z25 F4800
+G0 Y7 F4800
+G0 X0
+G0 Y17
+G1 E20 F700
+;G1 E1 F700
+G4 S5
+M98 P"/macros/wipe"

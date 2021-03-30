@@ -1,0 +1,7 @@
+G28 ;homing all
+G29 S2 ; forget old heightmap
+M140 S60 ; set bed to 60 degres
+M190 S60 ; wait until bed is at 60
+G4 S10 ; wait 10sec
+G29 ; perform the mesh bed
+M140 S0 ; cooldown bed

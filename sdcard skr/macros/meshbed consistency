@@ -1,0 +1,72 @@
+G29 S2
+; get to pla temp
+M140 S60 ; set bed to 60 degres
+M190 S60 ; wait for bed temp
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_1.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_2.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_3.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_4.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_5.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_6.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_7.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_8.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_9.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_10.csv"
+G29 S2
+G4 S60
+
+G28 Z
+G29 S0 ; probe bed
+G29 S3 P"heightmap_1.csv"
+G29 S2
+G0 Z50
+M140 S0 ; 
+
