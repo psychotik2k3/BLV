@@ -1,4 +1,4 @@
-G32
+;G32 ; avoid G32 as bed seems to be not that flat
 G29 S2
 G28 Z
 G29 S0 ; probe bed
