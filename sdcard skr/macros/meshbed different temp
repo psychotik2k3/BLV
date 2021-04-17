@@ -1,6 +1,9 @@
 ;G32 ; avoid G32 as bed seems to be not that flat
 G29 S2
 G28 Z
+M140 S0
+while heat.heaters[1].current>25
+	G4 S60
 G29 S0 ; probe bed
 G29 S3 P"heightmap_cold.csv"
 G4 S10

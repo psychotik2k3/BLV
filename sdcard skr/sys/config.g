@@ -50,15 +50,21 @@ M915 P2:4 S-30 F0 R0
 
 ; Z-Probe
 ; offset Y +21.5mm
-M558 P5 C"ystopmax" H5 F120 T3600 A2              ; set Z probe type to modulated and the dive height + speeds
+;M558 P9 H6 F120 T8000 C"^zstop"
+M558 P9 H5 F120 T8000 C"^zstop"       ; disable Z probe but set dive height, probe speed and travel speed
+M950 S0 C"servo0"                              ; Setup servo 0 as servo port on SKR
+M98 P"retractprobe.g"
+;M558 P5 C"ystopmax" H5 F120 T3600 A2              ; set Z probe type to modulated and the dive height + speeds
 ;M558 H30                                         ;*** Remove this line after delta calibration has been done and new delta parameters have been saved
 ;G31 P500 X26.6 Y40.1 Z1.65                           ; set Z probe trigger value, offset and trigger height
-G31 P500 X26.6 Y40.1 Z2.25 
+;G31 P500 X26.6 Y40.1 Z2.25 ; for IRprobe
+G31 P500 X32.5 Y67.5 Z3.75 ; for BLTouch
 ;M557 X30:320 Y31:311 S29:28                       ; define mesh grid, warning nozzle coordinates
 ;M557 X30:320 Y41:311 S29:27                       ; define mesh grid, warning nozzle coordinates 11x11 points
 ;M557 X30:320 Y41:311 S32:30                       ; define mesh grid, warning nozzle coordinates 10x10 points
+M557 X33:320 Y68:311 S32:27                       ; define mesh grid, warning nozzle coordinates 10x10 points BLTOUCH
 ;M557 X30:321 Y41:311 S97:90                       ; define mesh grid, warning nozzle coordinates 4x4 points
-M557 X30:321 Y41:311 S72.5:67.5                       ; define mesh grid, warning nozzle coordinates 5x5 points
+;M557 X30:321 Y41:311 S72.5:67.5                       ; define mesh grid, warning nozzle coordinates 5x5 points
 ;M557 X30:320 Y41:311 S5:5  ; mesh point every 5mm
 
 ; Heaters

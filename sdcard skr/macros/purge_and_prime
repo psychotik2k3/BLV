@@ -1,2 +1,45 @@
-M98 P"/macros/purge_and_wipe"
-M98 P"/macros/prime_line"
+M118 P0 S"PURGE AND PRIME" L1
+M118 P0 S"PURGE AND WIPE" L1
+; we home if not homed yet
+if (move.axes[2].homed=false) 
+	G28 Z
+G90
+G0 Z25 F4800
+G0 Y7 F4800
+G0 X0
+G0 Y17
+G1 E20 F700
+;G1 E1 F700
+G4 S1
+M118 P0 S"WIPE" L1
+G0 Y17 F4800
+G0 X15 F4800
+;G0 X0
+G0 Y65 F3600
+G0 X10 Y70
+G0 X15 Y75
+G0 X10 Y80
+G0 X15 Y85
+G0 X15 Y95
+G0 Y75
+G0 Y130 F4800
+G0 X60			;we avoid the silicone wipper on the return
+G0 Y17
+G0 X15
+G4 S2
+
+M118 P0 S"PRIME LINE" L1
+G0 X20 Y23 Z25 F4800
+G1 Z3 F720
+G92 E0 ; reset extrusion distance
+G1 E3 F700
+;M109 S[first_layer_temperature] ; wait for extruder temp
+;G4 S2
+; intro line
+G92 E0 ; reset extrusion distance
+G1 Z0.2 F720
+G1 X24 E1
+G1 X90.0 E9.0  F1000.0 ; priming
+G1 X130.0 E12.5  F1000.0 ; priming
+G4 S2
+G92 E0.0

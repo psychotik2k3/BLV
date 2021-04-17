@@ -1,6 +1,7 @@
+M118 P0 S"PRIME LINE" L1
 G0 X20 Y23 Z25 F4800
 G1 Z3 F720
-G1 E1 F700
+G1 E3 F700
 ;M109 S[first_layer_temperature] ; wait for extruder temp
 ;G4 S2
 ; intro line

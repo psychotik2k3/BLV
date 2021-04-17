@@ -1,3 +1,4 @@
+M118 P0 S"PURGE AND WIPE" L1
 ; we home if not homed yet
 if (move.axes[2].homed=false) 
 	G28 Z
@@ -8,5 +9,5 @@ G0 X0
 G0 Y17
 G1 E20 F700
 ;G1 E1 F700
-G4 S5
+G4 S1
 M98 P"/macros/wipe"
