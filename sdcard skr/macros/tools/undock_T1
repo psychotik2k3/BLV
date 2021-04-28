@@ -1,0 +1,6 @@
+if (move.axes[1].userPosition<100)
+	G0 Y100
+G0 X265 Y80
+G0 Y12.5
+G0 X257
+G0 Y80

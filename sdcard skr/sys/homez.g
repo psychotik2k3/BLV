@@ -14,18 +14,14 @@ M400
 G91                   ; relative positioning
 G1 H2 Z30 F6000        ; lift Z relative to current position
 G90
-if heat.heaters[1].current>55 ;we wipe to avoid oozing
-	M98 P"/macros/wipe"
 G1 X 175 Y 175 F6000
+G1 X142.5 Y108.5 
 	;G1 X {move.axes[0].min + ((move.axes[0].max-move.axes[0].min)/2)} Y {move.axes[1].min + ((move.axes[1].max-move.axes[0].min)/2)} F1800
 M558 F250 			   ; Set the probing speed
 G30
 M558 F30 			   ; Set the probing speed
 G30
    
-;G1 H1 Z-370 F360      ; move Z down stopping at the endstop;
-;G90                   ; absolute positioning
-;G92 Z0                ; set Z position to axis minimum (you may want to adjust this)
 
 ; Uncomment the following lines to lift Z after probing
 ;G91                  ; relative positioning

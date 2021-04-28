@@ -1,0 +1,5 @@
+G0 X175 Y175
+M98 P"/macros/dock_T0"
+G0 X175 Y175
+M98 P"/macros/undock_T0"
+G0 X175 Y175

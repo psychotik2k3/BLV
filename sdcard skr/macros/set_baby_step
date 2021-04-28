@@ -1,5 +1,8 @@
 M290 R0 S0.40
 ;M290 R0 S-0.0
-;M290 R0 S-0.05
+;M290 R0 S-0.15
 ;M290 R0 S-0.30
 ;M290 R0 S-0.50
+
+;display the baby step applied
+M290

@@ -1,0 +1,23 @@
+; we start empty
+M291 P"NO TOOL LOADED ?" S3
+
+M98 P"/macros/tools/undock_T0"
+G0 X175 Y175
+G0 X175 Y175
+M98 P"/macros/tools/dock_T0"
+G0 X175 Y175
+
+M98 P"/macros/tools/undock_T1"
+G0 X175 Y175
+M98 P"/macros/tools/dock_T1"
+G0 X175 Y175
+
+M98 P"/macros/tools/undock_T2"
+G0 X175 Y175
+M98 P"/macros/tools/dock_T2"
+G0 X175 Y175
+
+M98 P"/macros/tools/undock_T0"
+G0 X175 Y175
+M98 P"/macros/tools/dock_T0"
+G0 X175 Y175

@@ -1,0 +1,11 @@
+; go to entrance (coordinates are with tool 0 offset thus negative values)
+;G0 X241.5 Y10
+;G0 Y-14.5
+;G0 X234
+;G0 Y20
+
+G0 X257 Y18.5
+G0 Y-3
+G0 X269.5
+;G0 X268
+G0 Y38.5

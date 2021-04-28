@@ -27,13 +27,15 @@ M569 P4 S0  D3                                   ; physical drive 4 goes forward
 M584 X0 Y1 Z2:4 E3                               ; set drive mapping
 M350 X16 Y16 Z16 E16 I1                          ; configure microstepping with interpolation
 ;M92 X200.00 Y200.00 Z400.00 E436.54         	 ; set steps per mm
-M92 X200.00 Y200.00 Z400.00 E424.91         	 ; set steps per mm
+M92 X200.00 Y200.00 Z400.00 E424.91         	 ; set steps per mm original kit BMG
+;M92 X200.00 Y200.00 Z400.00 E400         	 ; set steps per mm bondtech LGX
 
 M566 X700 Y700 Z24.00 E2000.00       		 	 ; set maximum instantaneous speed changes (mm/min)
 ;M566 X600 Y600 Z12 E2000						 ; from krazycubekreator discord
 M203 X18000.00 Y18000.00 Z999.60 E1200.00 		 ; set maximum speeds (mm/min)
 M201 X3000.00 Y3000.00 Z100.00 E4000.00			 ; set accelerations (mm/s^2)
-M906 X1400 Y1400 Z1400 E1400 I30      	             ; set motor currents (mA) and motor idle factor in per cent
+M906 X1400 Y1400 Z1400 E1400 I30      	    ; set motor currents (mA) and motor idle factor in per cent original kit
+;M906 X1400 Y1400 Z1400 E800 I30      	    ; set motor currents (mA) and motor idle factor in per cent LGX extruder
 M84 S120                                          ; Set idle timeout
 
 ; Axis Limits
@@ -62,7 +64,7 @@ G31 P500 X32.5 Y67.5 Z3.75 ; for BLTouch
 ;M557 X30:320 Y31:311 S29:28                       ; define mesh grid, warning nozzle coordinates
 ;M557 X30:320 Y41:311 S29:27                       ; define mesh grid, warning nozzle coordinates 11x11 points
 ;M557 X30:320 Y41:311 S32:30                       ; define mesh grid, warning nozzle coordinates 10x10 points
-M557 X33:320 Y68:311 S32:27                       ; define mesh grid, warning nozzle coordinates 10x10 points BLTOUCH
+M557 X33:321 Y68:329 S32:29                       ; define mesh grid, warning nozzle coordinates 10x10 points BLTOUCH
 ;M557 X30:321 Y41:311 S97:90                       ; define mesh grid, warning nozzle coordinates 4x4 points
 ;M557 X30:321 Y41:311 S72.5:67.5                       ; define mesh grid, warning nozzle coordinates 5x5 points
 ;M557 X30:320 Y41:311 S5:5  ; mesh point every 5mm
@@ -106,6 +108,7 @@ M106 P1 S0 H1 T45                                ; set fan 0 value. Thermostatic
 ; Tools
 M563 P0 D0 H1 F0                                 ; define tool 0
 G10 P0 X0 Y0 Z0                                  ; set tool 0 axis offsets
+G10 P0 X0 Y-20 Z0                                  ; set tool changer tool 0 (BMG crazy plus) axis offsets
 G10 P0 R0 S0                                     ; set initial tool 0 active and standby temperatures to 0C
 
 ; Custom settings are not defined
@@ -117,11 +120,11 @@ M570 H0 P15
 
 ;set screws position
 ;M671 X295:59:59:295 Y299:299:55:55 P0.7	; for manual screw positionning
-M671 X396:-38 Y177:177 S3				; for auto dual Z bed leveling
+M671 X396:-38 Y176:176 S3				; for auto dual Z bed leveling
 
 M564 S1 H0                                  ; a supprimer apres permet de bouger sans faire home d'abord
 M302 P1                                     ; allow extrude with cold temperature
 
 ;M593 F20									; cancel ringing frequency 20 hz 80mm/sec / 4mm
 
-T0											; select tool 0
+;T0											; select tool 0

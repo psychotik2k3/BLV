@@ -1,35 +1,30 @@
-;G32 ; avoid G32 as bed seems to be not that flat
-G29 S2
-G28 Z
 M140 S0
-while heat.heaters[1].current>25
+while heat.heaters[0].current>34
 	G4 S60
-G29 S0 ; probe bed
+G34
+M400
 G29 S3 P"heightmap_cold.csv"
 G4 S10
 ; get to pla temp
 M140 S60 ; set bed to 60 degres
 M190 S60 ; wait for bed temp
 G4 S60
-G29 S2
-G28 Z
-G29 S0 ; probe bed
+G34
+M400
 G29 S3 P"heightmap_pla.csv"
 G4 S10
 M140 S80 ; set bed to 80 degres (PETG)
 M190 S80 ; wait for bed temp
 G4 S60
-G29 S2
-G28 Z
-G29 S0 ; probe bed
+G34
+M400
 G29 S3 P"heightmap_petg.csv"
 G4 S10
 M140 S100 ; set bed to 100 degres (ABS)
 M190 S100 ; wait for bed temp
 G4 S120	; wait 2 minutes to have temps stabilized on everything
-G29 S2
-G28 Z
-G29 S0 ; probe bed
+G34
+M400
 G29 S3 P"heightmap_abs.csv"
 G4 S10
 M140 S0 ; 
