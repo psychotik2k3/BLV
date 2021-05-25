@@ -1,0 +1,11 @@
+G0 X168 Y50
+G0 Y10
+;M400
+;M291 P"continue ?" S3 
+G0 Y -9 F600
+;M400
+;M291 P"continue ?" S3 
+G0 X158
+;M400
+;M291 P"continue ?" S3 
+G0 Y50 F6000
