@@ -7,17 +7,17 @@
 M98 P"/sys/C28.1.g"
 
 ; dock the tool
-G0 X232 Y50
-G0 Y10
+G0 X232 Y55 F3600
+G0 Y15
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y-10.3 F600
+G0 Y-5.3 F600
 ;M400
 ;M291 P"continue ?" S3 
 G0 X242
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y50 F6000
+G0 Y55 F6000
 
 M400
 ; we cannot check state.currentTool as it is changed after Tfreex.g so we just rely on the tool loaded probe

@@ -5,17 +5,17 @@
 ; Wait for set temperatures to be reached
 M116 P2
 
-G0 X168 Y50
-G0 Y10
+G0 X153 Y55 F3600
+G0 Y15
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y -9 F600
+G0 Y -4 F600
 ;M400
 ;M291 P"continue ?" S3 
-G0 X158
+G0 X143
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y50 F6000
+G0 Y55 F6000
 M400
 ;M118 S{sensors.gpIn[1].value=1 && state.currentTool=2}
 if sensors.gpIn[1].value=1 && state.currentTool=2

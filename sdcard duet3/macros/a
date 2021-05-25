@@ -1,4 +1,0 @@
-if sensors.gpIn[1].value=1
-	M118 S"rempli"
-else
-	M118 S"vide"

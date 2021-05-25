@@ -15,7 +15,8 @@ M400
 G91                    ; relative positioning
 G1 H2 Z5 F6000         ; lift Z relative to current position
 G90                    ; absolute positioning
-G1 X155 Y155 F6000 ; go to middle of bed
+;G1 X155 Y155 F6000 ; go to middle of bed
+G1 X{155 - sensors.probes[0].offsets[0]} Y{155 - sensors.probes[0].offsets[1]} F6000
 M558 F250 			   ; Set the probing speed
 G30
 M558 F30 			   ; Set the probing speed
