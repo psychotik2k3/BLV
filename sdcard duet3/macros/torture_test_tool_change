@@ -3,34 +3,46 @@
 ; {"move.axes[0].machinePosition = " ^ move.axes[0].machinePosition}
 
 while true
-	echo {"iteration: " ^ iterations}
-	if iterations=2
-		abort "all 5 rounds done without error"
-	T0
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on Tool 0"
-	T1
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on change Tool 0=>1"
-	T2
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on change Tool 1=>2"
-	T1
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on change Tool 2=>1"
-	T0
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on change Tool 1=>0"
-	T2
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on change Tool 0=>2"
-	T0
-	M400
-	if sensors.gpIn[1].value=0
-		abort "error on change Tool 2=>0"
+    echo {"iteration: " ^ iterations}
+    if iterations=2
+        abort "all 5 rounds done without error"
+    T0
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on Tool 0"
+    M98 P"/macros/move_square"
+    M400
+    T1
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on change Tool 0=>1"
+    M98 P"/macros/move_square"
+    M400
+    T2
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on change Tool 1=>2"
+    M98 P"/macros/move_square"
+    M400
+    T1
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on change Tool 2=>1"
+    M98 P"/macros/move_square"
+    M400
+    T0
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on change Tool 1=>0"
+    M98 P"/macros/move_square"
+    M400
+    T2
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on change Tool 0=>2"
+    M98 P"/macros/move_square"
+    M400
+    T0
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on change Tool 2=>0"
