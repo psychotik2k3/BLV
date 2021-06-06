@@ -28,10 +28,12 @@ M569 P1.2 S1 D3                                                             ; ph
 M584 X0.0 Y0.1 Z0.2:0.3 E1.0:1.1:1.2                                        ; set drive mapping
 M350 X16 Y16 Z16:16 E16:16:16 I1                                            ; configure microstepping with interpolation
 M92 X200.00 Y200.00 Z400.00 E424.91:917.444:400.00                          ; set steps per mm
-M566 X42000.00 Y42000.00 Z1440.00:1440.00 E72000.00:72000.00:72000.00       ; set maximum instantaneous speed changes (mm/min)
-M203 X1080000.00 Y1080000.00 Z60000.00:60000.00 E72000.00:72000.00:72000.00 ; set maximum speeds (mm/min)
+;M566 X42000.00 Y42000.00 Z1440.00:1440.00 E72000.00:72000.00:72000.00       ; set maximum instantaneous speed changes (mm/min)
+M566 X700.00 Y700.00 Z24.00:24.00 E2000.00:2000.00:2000.00                  ; set maximum instantaneous speed changes (mm/min)
+;M203 X1080000.00 Y1080000.00 Z60000.00:60000.00 E72000.00:72000.00:72000.00 ; set maximum speeds (mm/min)
+M203 X18000.00 Y18000.00 Z999.00:999.00 E1200.00:1200.00:1200.00           ; set maximum speeds (mm/min)
 M201 X3000.00 Y3000.00 Z100.00:100.00 E4000.00:4000.00:4000.00              ; set accelerations (mm/s^2)
-M906 X1600 Y1600 Z800:800 E400:400:400 I30                                    ; set motor currents (mA) and motor idle factor in per cent
+M906 X1400 Y1400 Z800:800 E1400:400:400 I30                                    ; set motor currents (mA) and motor idle factor in per cent
 M84 S120                                                                    ; Set idle timeout
 
 ; Axis Limits
@@ -49,9 +51,9 @@ M950 S0 C"io7.out"                                                          ; cr
 M558 P9 C"^io7.in" H5 F120 T8000                                            ; set Z probe type to bltouch and the dive height + speeds
 ;M558 H30                                                                    ;*** Remove this line after delta calibration has been done and new delta parameters have been saved
 ;G31 P500 X32.5 Y67.5 Z3.75                                                  ; set Z probe trigger value, offset and trigger height
-G31 K0 P500 X40.2 Y4.1 Z5.68                                               ; calculated from macro autoconfig BLTOUCH correspond to T2 as it's the lowest
+G31 K0 P500 X43 Y3.5 Z5.68                                               ; calculated from macro autoconfig BLTOUCH correspond to T2 as it's the lowest
 ;M557 X0:310 Y0:310 S31                                                      ; define mesh grid
-M557 X9:309 Y46:306 S30:26                                                      ; define mesh grid
+M557 X19:305 Y3:303 S28.6:30                                                      ; define mesh grid
 M98 P"retractprobe.g"                                                       ; force a retract in case of restart when pin deployed
 
 ; Heaters

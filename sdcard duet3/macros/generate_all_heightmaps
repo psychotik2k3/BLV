@@ -1,0 +1,38 @@
+M140 S0
+while heat.heaters[0].current>37
+	G4 S60
+G32                                            ; bed level
+M400
+G29 S2                                         ; clear meshbed
+G29 S0                                         ; preform meshbed
+G29 S3 P"heightmap_cold.csv"                   ; save meshbed to file
+G4 S10
+; get to pla temp
+M140 S60 ; set bed to 60 degres
+M190 S60 ; wait for bed temp
+G4 S60   ; wait 1 minute so bed is stabilised
+G32                                            ; bed level
+M400
+G29 S2                                         ; clear meshbed
+G29 S0                                         ; preform meshbed
+G29 S3 P"heightmap_pla.csv"
+G4 S10
+M140 S80 ; set bed to 80 degres (PETG)
+M190 S80 ; wait for bed temp
+G4 S60
+G32                                            ; bed level
+M400
+G29 S2                                         ; clear meshbed
+G29 S0                                         ; preform meshbed
+G29 S3 P"heightmap_petg.csv"
+G4 S10
+M140 S100 ; set bed to 100 degres (ABS)
+M190 S100 ; wait for bed temp
+G4 S120	; wait 2 minutes to have temps stabilized on everything
+G32                                            ; bed level
+M400
+G29 S2                                         ; clear meshbed
+G29 S0                                         ; preform meshbed
+G29 S3 P"heightmap_abs.csv"
+G4 S10
+M140 S0 ; 

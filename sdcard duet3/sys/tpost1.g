@@ -7,14 +7,14 @@ M116 P1
 G90
 if (move.axes[1].userPosition<100)
 	G0 Y100 F3600
-G0 X242 Y55 F3600
+G0 X244 Y55 F3600
 G0 Y15
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y-5.3 F600
+G0 Y-3.5 F600
 ;M400
 ;M291 P"continue ?" S3 
-G0 X232
+G0 X234
 ;M400
 ;M291 P"continue ?" S3 
 G0 Y55 F6000

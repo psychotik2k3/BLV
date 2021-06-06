@@ -1,0 +1,118 @@
+2021-06-05 14:43:58 [info] Event logging started at level debug
+2021-06-05 14:43:58 [info] Running: Duet 3 MB6HC v1.01 or later: 3.3RC3+3 (2021-06-04 09:11:54)
+2021-06-05 14:44:55 [debug] X homed: true  Y Homed: true
+2021-06-05 14:44:55 [debug] Homing Z axis
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:17 [debug] {"err":-1}
+
+2021-06-05 14:45:31 [debug] G32 bed probe heights: 0.023, mean 0.023, deviation from mean 0.000
+2021-06-05 14:46:04 [warn] Leadscrew adjustments made: -0.021 0.081, points used 2, (mean, deviation) before (0.030, 0.032) after (-0.000, 0.000)
+2021-06-05 14:46:04 [debug] Leadscrew adjustments made: -0.021 0.081, points used 2, (mean, deviation) before (0.030, 0.032) after (-0.000, 0.000)
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:04 [debug] {"err":-1}
+
+2021-06-05 14:46:05 [warn] Warning: M9: Command is not supported
+2021-06-05 14:51:02 [debug] Writing to file: /sys/SetTool.g
+2021-06-05 14:51:35 [debug] X homed: true  Y Homed: true
+2021-06-05 14:51:35 [debug] Homing Z axis
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:51:56 [debug] {"err":-1}
+
+2021-06-05 14:52:07 [debug] Writing to file: /sys/SetTool.g
+2021-06-05 14:52:15 [debug] iteration: 0
+2021-06-05 14:52:20 [debug] Writing to file: /sys/SetTool.g
+2021-06-05 14:52:42 [debug] Writing to file: /sys/SetTool.g
+2021-06-05 14:53:18 [info] Event logging started at level debug
+2021-06-05 14:53:18 [info] Running: Duet 3 MB6HC v1.01 or later: 3.3RC3+3 (2021-06-04 09:11:54)
+2021-06-05 14:53:26 [info] Event logging stopped

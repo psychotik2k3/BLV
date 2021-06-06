@@ -7,14 +7,14 @@
 M98 P"/sys/C28.1.g"
 
 ; dock the tool
-G0 X232 Y55 F3600
+G0 X234 Y55 F3600
 G0 Y15
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y-5.3 F600
+G0 Y-3.5 F600
 ;M400
 ;M291 P"continue ?" S3 
-G0 X242
+G0 X244
 ;M400
 ;M291 P"continue ?" S3 
 G0 Y55 F6000

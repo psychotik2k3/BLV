@@ -1,0 +1,14 @@
+
+while true
+    echo {"iteration: " ^ iterations}
+    if iterations=20
+        abort "all 20 rounds done without error"
+    T2
+    M400
+	G0 X{(75+150)} Y{(120+150)} F3600
+	M400
+    T-1
+    M400
+	G0 X{(75+150)} Y{(120+150)} F3600
+    M400
+    

@@ -11,7 +11,7 @@ G0 X143 Y55 F3600
 G0 Y15
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y-4 F600
+G0 Y-3.5 F600
 ;M400
 ;M291 P"continue ?" S3 
 G0 X153

@@ -1,0 +1,16 @@
+
+while true
+    echo {"iteration: " ^ iterations}
+    if iterations=5
+        abort "all 5 rounds done without error"
+    T0
+    M400
+    if sensors.gpIn[1].value=0
+        abort "error on Tool 0"
+    M98 P"/macros/move_square"
+    M400
+    T-1
+    M400
+    M98 P"/macros/move_square"
+    M400
+    
