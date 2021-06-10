@@ -1,0 +1,24 @@
+M118 P0 S"Prime Line" L1
+; we home if not homed yet
+if (move.axes[2].homed=false) 
+	G28 Z
+G90
+G0 Z25 F4800
+if (move.axes[0].userPosition!=-12 || move.axes[1].userPosition!=21)
+	M118 P0 S"moving to purge position" L1
+	if (move.axes[1].userPosition<(100+tools[0].offsets[1]))
+		G0 Y{100+tools[0].offsets[1]} F3600
+	G0 X0
+	G0 Y0 F4800
+	G0 X0
+	G0 X-12 Y21
+G0 X-2 Y1 F4800
+G0 Z2
+G1 E3 F700
+G92 E0 ; reset extrusion distance
+G1 Z0.2 F720
+G1 X4 E1
+G1 Y66.0 E9.0  F1000.0 ; priming
+G1 Y106.0 E12.5  F1000.0 ; priming
+G4 S2
+G92 E0.0

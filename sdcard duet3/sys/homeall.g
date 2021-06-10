@@ -6,7 +6,8 @@ G91                    ; relative positioning
 M98 P"retractprobe.g" 
 G1 H2 Z5 F6000         ; lift Z relative to current position
 
-
+G1 H1 Y369 F1800 ; move quickly to Y axis endstop and stop there (first pass)
+G1 Y-30 F6000     ; go back a few mm
 
 G1 H1 X-358 F1800 ; move quickly to X axis endstop and stop there (first pass)
 G1 X5 F6000       ; go back a few mm

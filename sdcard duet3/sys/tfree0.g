@@ -5,19 +5,21 @@
 
 ; check that X and Y are homed in case of power loss or reset with tool loaded
 M98 P"/sys/C28.1.g"
-
+G90
+if (move.axes[1].userPosition<(100+tools[0].offsets[1]))
+	G0 Y{100+tools[0].offsets[1]} F3600
 ; dock the tool
-G0 X316.5 Y55 F3600
-G0 Y15
+G0 X{316.5+tools[0].offsets[0]} Y{55+tools[0].offsets[1]} F3600
+G0 Y{20+tools[0].offsets[1]}
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y-4 F600
+G0 Y{-4+tools[0].offsets[1]} F600
 ;M400
 ;M291 P"continue ?" S3 
-G0 X326.5
+G0 X{326.5+tools[0].offsets[0]}
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y55 F6000
+G0 Y{55+tools[0].offsets[1]} F6000
 
 M400
 ; we cannot check state.currentTool as it is changed after Tfreex.g so we just rely on the tool loaded probe

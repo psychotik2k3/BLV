@@ -1,0 +1,22 @@
+M118 P0 S"PURGE" L1
+; we home if not homed yet
+if (move.axes[2].homed=false)
+	M118 P0 S"axis not homed" L1
+	M98 P"sys/homez.g"
+G90
+G0 Z25 F4800
+if (move.axes[1].userPosition<(100+tools[0].offsets[1]))
+	G0 Y{100+tools[0].offsets[1]} F3600
+G0 X0
+G0 Y0 F4800
+G0 X0
+G0 X-20 Y-15
+G92 E0
+G1 E20 F700
+M400
+G92 E0
+G1 E-1 F700
+M400
+G92 E0
+G4 S1
+M98 P"/macros/wipe"

@@ -1,0 +1,11 @@
+;if (tools[1].state="active")
+;    M290 R0 S0.08
+;else
+    M290 R0 S0.08
+;M290 R0 S-0.0
+;M290 R0 S-0.15
+;M290 R0 S-0.30
+;M290 R0 S-0.50
+
+;display the baby step applied
+M290

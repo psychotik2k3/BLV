@@ -5,7 +5,8 @@
 
 ; General preferences
 G90                                                                         ; send absolute coordinates...
-M83                                                                         ; ...but relative extruder moves
+;M83                                                                         ; ...but relative extruder moves
+M82                                                                         ; ...even for extruder moves do not forget to reset  when needed
 M550 P"duet3"                                                               ; set printer name
 M669 K1                                                                     ; select CoreXY mode
 
@@ -22,18 +23,18 @@ M569 P0.0 S0 D2                                                             ; ph
 M569 P0.1 S0 D2                                                             ; physical drive 0.1 goes forwards  (other diagonal)
 M569 P0.2 S1 D3                                                             ; physical drive 0.2 goes backwards  (z right)
 M569 P0.3 S1 D3                                                             ; physical drive 0.3 goes backwards  (z left)
-M569 P1.0 S0 D3                                                             ; physical drive 1.0 goes backwards  (tool 0) 
-M569 P1.1 S0 D3                                                             ; physical drive 1.1 goes backwards  (tool 1)
-M569 P1.2 S1 D3                                                             ; physical drive 1.2 goes backwards  (tool 2)
+M569 P1.0 S0 D3                                                             ; physical drive 1.0 goes forwards  (tool 0) 
+M569 P1.1 S0 D3                                                             ; physical drive 1.1 goes forwards  (tool 1)
+M569 P1.2 S0 D3                                                             ; physical drive 1.2 goes forwards  (tool 2)
 M584 X0.0 Y0.1 Z0.2:0.3 E1.0:1.1:1.2                                        ; set drive mapping
 M350 X16 Y16 Z16:16 E16:16:16 I1                                            ; configure microstepping with interpolation
-M92 X200.00 Y200.00 Z400.00 E424.91:917.444:400.00                          ; set steps per mm
+M92 X200.00 Y200.00 Z400.00 E424.91:955.666:406.00                          ; set steps per mm
 ;M566 X42000.00 Y42000.00 Z1440.00:1440.00 E72000.00:72000.00:72000.00       ; set maximum instantaneous speed changes (mm/min)
 M566 X700.00 Y700.00 Z24.00:24.00 E2000.00:2000.00:2000.00                  ; set maximum instantaneous speed changes (mm/min)
 ;M203 X1080000.00 Y1080000.00 Z60000.00:60000.00 E72000.00:72000.00:72000.00 ; set maximum speeds (mm/min)
 M203 X18000.00 Y18000.00 Z999.00:999.00 E1200.00:1200.00:1200.00           ; set maximum speeds (mm/min)
 M201 X3000.00 Y3000.00 Z100.00:100.00 E4000.00:4000.00:4000.00              ; set accelerations (mm/s^2)
-M906 X1400 Y1400 Z800:800 E1400:400:400 I30                                    ; set motor currents (mA) and motor idle factor in per cent
+M906 X2000 Y2000 Z1000:1000 E2000:800:950 I30                                    ; set motor currents (mA) and motor idle factor in per cent
 M84 S120                                                                    ; Set idle timeout
 
 ; Axis Limits
@@ -63,7 +64,8 @@ M950 H0 C"out0" T0                                                          ; cr
 M307 H0 B0 S1.00                                                            ; disable bang-bang mode for the bed heater and set PWM limit
 M140 H0                                                                     ; map heated bed to heater 0
 M143 H0 S120                                                                ; set temperature limit for heater 0 to 120C
-M307 H0 R0.142 C1371.2 D36.47 S1.00 V23.5                                   ; from autotune
+;M307 H0 R0.142 C1371.2 D36.47 S1.00 V23.5                                   ; from autotune
+M307 H0 B0 R0.143 C1380.8 D38.51 S1.00 V23.5                                ; from autotune
 M308 S1 P"1.temp0" Y"thermistor" T3600000 B6453 C9.932858e-8 H-3            ; configure sensor 1 as thermistor on pin 1.temp0
 M950 H1 C"1.out0" T1                                                        ; create nozzle heater output on 1.out0 and map it to sensor 1
 M307 H1 B0 S1.00                                                            ; disable bang-bang mode for heater  and set PWM limit
@@ -94,13 +96,16 @@ M106 P3 S1 H3 T45                                                           ; se
 
 ; Tools
 M563 P0 S"BMG-NF" D0 H1 F0                                                  ; define tool 0
-G10 P0 X0 Y-0.7 Z1.76                                                             ; set tool 0 axis offsets
+;G10 P0 X0 Y-0.7 Z1.76                                                             ; set tool 0 axis offsets
+G10 P0 X0 Y-27.6 Z1.76                                                             ; set tool 0 axis offsets
 G10 P0 R0 S0                                                                ; set initial tool 0 active and standby temperatures to 0C
 M563 P1 S"BIQUH" D1 H2 F0                                                   ; define tool 1
-G10 P1 X0 Y0 Z0.29                                                             ; set tool 1 axis offsets
+;G10 P1 X0 Y-26.9 Z0.29                                                             ; set tool 1 axis offsets
+;G10 P1 X0 Y-26.9 Z0.81                                                             ; set tool 1 axis offsets
+G10 P1 X0 Y-26.9 Z-0.379                                                             ; set tool 1 axis offsets
 G10 P1 R0 S0                                                                ; set initial tool 1 active and standby temperatures to 0C
 M563 P2 S"LGXFF" D2 H3 F0                                                   ; define tool 2
-G10 P2 X0 Y0 Z0                                                             ; set tool 2 axis offsets
+G10 P2 X0 Y-26.9 Z0                                                             ; set tool 2 axis offsets
 G10 P2 R0 S0                                                                ; set initial tool 2 active and standby temperatures to 0C
 
 ; Custom settings are not defined
@@ -116,5 +121,5 @@ M575 P1 S1 B57600                                                           ; en
 M950 J1 C"io8.in"                                                           ; set up IR probe (or switch) on IO8 can check with sensors.gpIn[1].value=1 (tool loaded)
 M98 P"/sys/SetTool.g"                                                       ; restore tool load status in case of reset or power loss with a tool loaded
 ;a virer apres
-M564 S0 H0
+;M564 S0 H0
 M501
