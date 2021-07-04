@@ -2,6 +2,9 @@
 ; called to perform automatic bed compensation via G32
 ;
 ;M671 X372:-62 Y154:154 S3				; for auto dual Z bed leveling
+if (move.axes[1].homed=false ) 
+	echo "homing all axis"
+	M98 P"homeall.g"
 
 if (move.axes[2].homed=false ) 
 	echo "homing Z axis"

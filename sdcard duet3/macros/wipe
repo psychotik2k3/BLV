@@ -1,22 +1,24 @@
 M118 P0 S"WIPE" L1
 ; we home if not homed yet
-if (move.axes[2].homed=false) 
-	G28 Z
+M98 P"/sys/C28.1.g"
 G90
 G0 Z25 F4800
 if (move.axes[0].userPosition!=-20 || move.axes[1].userPosition!=-15)
 	M118 P0 S"moving to purge position" L1
-	if (move.axes[1].userPosition<(100+tools[0].offsets[1]))
-		G0 Y{100+tools[0].offsets[1]} F3600
-	G0 X0
+	if (move.axes[1].userPosition<(120+tools[0].offsets[1]))
+		G0 Y{120+tools[0].offsets[1]} F9000
+	G0 X0 F9000
 	G0 Y0 F4800
 	G0 X0
 	G0 X-20 Y-15
 G0 X-12 Y6 F4800
 G0 Y35
 G0 Y88
+G0 X0
 G0 Y21
 G0 X-23
 G0 X-12
-G4 S2
+G4 S1
+G0 X-23
+G0 X-12
 G0 X-20 Y-15

@@ -15,4 +15,4 @@ G30 P2 X35 Y33 Z-99999 ; probe front left
 G30 P3 X271 Y33 Z-99999 S4 ; probe near an adjusting screw and report adjustments needed
 G0 X155 Y155 Z{sensors.probes[0].diveHeight+10} F4800
 
-M671 X372:-62 Y154:154 S3				; for auto dual Z bed leveling
+M98 P"/sys/set_screw_dual_z.g"

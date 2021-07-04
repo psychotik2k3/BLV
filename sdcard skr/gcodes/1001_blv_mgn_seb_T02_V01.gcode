@@ -1,0 +1,519 @@
+G29 S1
+;----- end of user defined header -----
+;LAYER_COUNT:2
+; --- first-layer track width 2D test for PLA Amazon 3D printed using BLV MGN) and a 0.4-mm nozzle ---
+; --- testing the following first-layer track width values: 0.40 mm, 0.43 mm, 0.47 mm, 0.50 mm, 0.53 mm, 0.57 mm, 0.60 mm ---
+M140 S60; set the print bed temperature and apply immediately
+M190 S60; set the print bed temperature and wait till the temperature has been reached
+M104 S215 T0; set the extruder temperature and apply immediately
+M109 S215 T0; set the extruder temperature and wait till it has been reached
+G28 ; Move to home position
+M98 P"/macros/set_baby_step"
+M98 P"/macros/purge_and_prime"
+G21; unit in mm
+G92 E0; reset extruder
+M83; set extruder to relative mode
+G1 F8400
+G90
+G1 X51.000000 Y51.000000 Z0.401000 
+G91
+; --- start to clean the nozzle ---
+G4 P5000 ; set the waiting time in ms
+G1 F1000 E2.5; extrude 2.5 mm of material
+G4 P5000 ; set the waiting time in ms
+G1 F1920
+G90
+;LAYER:0
+M117 INDICATOR-Layer0
+G1 X147.000000 Z0.010000 E8.209366
+G91
+G90
+;LAYER:1
+M117 INDICATOR-Layer1
+G1 Y59.000000 Z0.200000 E8.209366
+G91
+G1 X-8.000000 
+; --- end to clean the nozzle ---
+; --- print the outer perimeter ---
+G1 F640
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 Y4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 X-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 Y-4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+G1 X4.000000 E0.228038
+; --- start to print the test structure ---
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.40 mm ---
+
+G1 F1280
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-4.750000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F640
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E2.369365
+G1 X-0.400000 
+G1 Y79.800000 E2.369365
+G1 X-0.400000 
+G1 Y-79.800000 E2.369365
+G1 X-0.400000 
+G1 Y79.800000 E2.369365
+G1 X-0.400000 
+G1 Y-79.800000 E2.369365
+G1 X-0.400000 
+G1 Y79.800000 E2.369365
+G1 X-0.400000 
+G1 Y-79.800000 E2.369365
+G1 X-0.400000 
+G1 Y79.800000 E2.369365
+G1 X-0.400000 
+G1 Y-79.800000 E2.369365
+G1 X-0.400000 
+G1 Y79.800000 E2.369365
+G1 X-0.400000 
+G1 Y-79.800000 E2.369365
+G1 X-0.400000 
+G1 Y79.800000 E2.369365
+G1 X-0.400000 
+G1 Y-79.800000 E2.369365
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X4.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.43 mm ---
+
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-9.550000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E2.590545
+G1 X-0.433333 
+G1 Y79.800000 E2.590545
+G1 X-0.433333 
+G1 Y-79.800000 E2.590545
+G1 X-0.433333 
+G1 Y79.800000 E2.590545
+G1 X-0.433333 
+G1 Y-79.800000 E2.590545
+G1 X-0.433333 
+G1 Y79.800000 E2.590545
+G1 X-0.433333 
+G1 Y-79.800000 E2.590545
+G1 X-0.433333 
+G1 Y79.800000 E2.590545
+G1 X-0.433333 
+G1 Y-79.800000 E2.590545
+G1 X-0.433333 
+G1 Y79.800000 E2.590545
+G1 X-0.433333 
+G1 Y-79.800000 E2.590545
+G1 X-0.433333 
+G1 Y79.800000 E2.590545
+G1 X-0.433333 
+G1 Y-79.800000 E2.590545
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X5.200000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.47 mm ---
+
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-9.950000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E2.811725
+G1 X-0.466667 
+G1 Y79.800000 E2.811725
+G1 X-0.466667 
+G1 Y-79.800000 E2.811725
+G1 X-0.466667 
+G1 Y79.800000 E2.811725
+G1 X-0.466667 
+G1 Y-79.800000 E2.811725
+G1 X-0.466667 
+G1 Y79.800000 E2.811725
+G1 X-0.466667 
+G1 Y-79.800000 E2.811725
+G1 X-0.466667 
+G1 Y79.800000 E2.811725
+G1 X-0.466667 
+G1 Y-79.800000 E2.811725
+G1 X-0.466667 
+G1 Y79.800000 E2.811725
+G1 X-0.466667 
+G1 Y-79.800000 E2.811725
+G1 X-0.466667 
+G1 Y79.800000 E2.811725
+G1 X-0.466667 
+G1 Y-79.800000 E2.811725
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X5.600000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.50 mm ---
+
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-10.350000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E3.032905
+G1 X-0.500000 
+G1 Y79.800000 E3.032905
+G1 X-0.500000 
+G1 Y-79.800000 E3.032905
+G1 X-0.500000 
+G1 Y79.800000 E3.032905
+G1 X-0.500000 
+G1 Y-79.800000 E3.032905
+G1 X-0.500000 
+G1 Y79.800000 E3.032905
+G1 X-0.500000 
+G1 Y-79.800000 E3.032905
+G1 X-0.500000 
+G1 Y79.800000 E3.032905
+G1 X-0.500000 
+G1 Y-79.800000 E3.032905
+G1 X-0.500000 
+G1 Y79.800000 E3.032905
+G1 X-0.500000 
+G1 Y-79.800000 E3.032905
+G1 X-0.500000 
+G1 Y79.800000 E3.032905
+G1 X-0.500000 
+G1 Y-79.800000 E3.032905
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X6.000000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.53 mm ---
+
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-10.750000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E3.254085
+G1 X-0.533333 
+G1 Y79.800000 E3.254085
+G1 X-0.533333 
+G1 Y-79.800000 E3.254085
+G1 X-0.533333 
+G1 Y79.800000 E3.254085
+G1 X-0.533333 
+G1 Y-79.800000 E3.254085
+G1 X-0.533333 
+G1 Y79.800000 E3.254085
+G1 X-0.533333 
+G1 Y-79.800000 E3.254085
+G1 X-0.533333 
+G1 Y79.800000 E3.254085
+G1 X-0.533333 
+G1 Y-79.800000 E3.254085
+G1 X-0.533333 
+G1 Y79.800000 E3.254085
+G1 X-0.533333 
+G1 Y-79.800000 E3.254085
+G1 X-0.533333 
+G1 Y79.800000 E3.254085
+G1 X-0.533333 
+G1 Y-79.800000 E3.254085
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X6.400000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.57 mm ---
+
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-11.150000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E3.475265
+G1 X-0.566667 
+G1 Y79.800000 E3.475265
+G1 X-0.566667 
+G1 Y-79.800000 E3.475265
+G1 X-0.566667 
+G1 Y79.800000 E3.475265
+G1 X-0.566667 
+G1 Y-79.800000 E3.475265
+G1 X-0.566667 
+G1 Y79.800000 E3.475265
+G1 X-0.566667 
+G1 Y-79.800000 E3.475265
+G1 X-0.566667 
+G1 Y79.800000 E3.475265
+G1 X-0.566667 
+G1 Y-79.800000 E3.475265
+G1 X-0.566667 
+G1 Y79.800000 E3.475265
+G1 X-0.566667 
+G1 Y-79.800000 E3.475265
+G1 X-0.566667 
+G1 Y79.800000 E3.475265
+G1 X-0.566667 
+G1 Y-79.800000 E3.475265
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X6.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- print bed temperature: 60 degC
+; --- first-layer extrusion temperature: 215 degC
+; --- first-layer track width: 0.40 mm
+; --- first-layer track height: 0.20 mm
+; --- first-layer printing speed: 32 mm/s
+; --- part cooling: 0 %
+; --- first-layer track width: 0.60 mm ---
+
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X-11.550000 Y79.800000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+; --- testing the following printing speed value: 32.000 mm/s
+G1 F1920
+G90
+G1 Z0.200000 
+G91
+G1 Y-79.800000 E3.696444
+G1 X-0.600000 
+G1 Y79.800000 E3.696444
+G1 X-0.600000 
+G1 Y-79.800000 E3.696444
+G1 X-0.600000 
+G1 Y79.800000 E3.696444
+G1 X-0.600000 
+G1 Y-79.800000 E3.696444
+G1 X-0.600000 
+G1 Y79.800000 E3.696444
+G1 X-0.600000 
+G1 Y-79.800000 E3.696444
+G1 X-0.600000 
+G1 Y79.800000 E3.696444
+G1 X-0.600000 
+G1 Y-79.800000 E3.696444
+G1 X-0.600000 
+G1 Y79.800000 E3.696444
+G1 X-0.600000 
+G1 Y-79.800000 E3.696444
+G1 X-0.600000 
+G1 Y79.800000 E3.696444
+G1 X-0.600000 
+G1 Y-79.800000 E3.696444
+G1 F3840
+G1 F1800 E-2.000
+G0 Z1.000000 
+G0 X7.200000 
+G0 Z-1.000000 
+G1 F1800 E2.000
+G1 F1920
+; --- finish to print the test structure ---
+;--- start footer ---
+; end of the test routine
+G91
+G0 Z5.0; Lift the nozzle to avoid hitting printed structure
+M140 S0; set the print bed temperature and apply immediately
+M104 S0 T0; set the extruder temperature and apply immediately
+M106 S0; set the cooler speed for part cooling
+;--- end footer ---
+;----- start of user defined footer -----
+M98 P"/macros/rise30mm"
+M98 P"/macros/remove_baby_step"
+M84 ; Disable motors
+M104 S0 ; turn off temperature
+M140 S0 ; turn off heatbed

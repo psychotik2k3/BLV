@@ -1,0 +1,1 @@
+M671 X372:-62 Y154:154 S3				; for auto dual Z bed leveling

@@ -1,0 +1,13 @@
+var bypassPurge=true
+var bypassWipe=false
+
+if !var.bypassPurge
+    M98 P"/macros/purge"
+    if (tools[1].state="active")
+        G1 E-1 F700
+    else
+        G1 E3 F700
+    M400
+    G92 E0
+if !var.bypassWipe
+    M98 P"/macros/wipe"

@@ -5,18 +5,21 @@
 ; Wait for set temperatures to be reached
 var previousActiveTemperature = heat.heaters[2].active
 var previousStandbyTemperature = heat.heaters[2].standby
-
+var changeSpeed=12000
 M400
-;M109 S{var.previousActiveTemperature} T1
-G10 P1 S{var.previousActiveTemperature} R{var.previousActiveTemperature}
-M116 P1
+if (var.previousActiveTemperature >150 && var.previousStandbyTemperature=0)
+    G10 P1 S{var.previousActiveTemperature} R{150}
+;G4 S1
 
+G0 R2 Z5 F{var.changeSpeed}
 ;now that the temp threshold is here we put back standby temperature
-G10 P1 S{var.previousActiveTemperature} R{var.previousStandbyTemperature}
+;G10 P1 S{var.previousActiveTemperature} R{var.previousStandbyTemperature}
 G90
 if (move.axes[1].userPosition<(100+tools[1].offsets[1]))
 	G0 Y{100+tools[1].offsets[1]} F3600
-G0 X{244+tools[1].offsets[0]} Y{55+tools[1].offsets[1]} F3600
+G0 X{244+tools[1].offsets[0]} F{var.changeSpeed}
+M116 P1 S4
+G0 Y{55+tools[1].offsets[1]} F{var.changeSpeed}
 G0 Y{20+tools[1].offsets[1]}
 ;M400
 ;M291 P"continue ?" S3 
@@ -26,7 +29,7 @@ G0 Y{-3.5+tools[1].offsets[1]} F600
 G0 X{234+tools[1].offsets[0]}
 ;M400
 ;M291 P"continue ?" S3 
-G0 Y{55+tools[1].offsets[1]} F6000
+G0 Y{55+tools[1].offsets[1]} F{var.changeSpeed}
 
 M400
 ;M118 S{sensors.gpIn[1].value=1 && state.currentTool=2}

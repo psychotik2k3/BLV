@@ -17,14 +17,14 @@ G28 ; home all axes
 G1 Z5 F5000 ; lift nozzle
 
 G10 S215 ; set temperature
-M116 ; wait for temperature to be reached
+M116 S3 ; wait for temperature to be reached
 G21 ; set units to millimeters
 G90 ; use absolute coordinates
 M82 ; use absolute distances for extrusion
 G92 E0
 G21		; metric values
 G28		; home all
-M98 P"/sys/load_meshbed"	; load mesh bed corresponding to the temp
+M98 P"/sys/load_meshbed.g"	; load mesh bed corresponding to the temp
 M98 P"/macros/set_baby_step"	; set baby step
 M98 P"/macros/purge_and_wipe"; purge and wipe residu
 M98 P"/macros/prime_line"                  ; do the prime line

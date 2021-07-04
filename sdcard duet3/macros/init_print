@@ -1,0 +1,6 @@
+global tool0Primed=false
+global tool1Primed=false
+global tool2Primed=false
+
+;if temp du tool >0 alors on le prime
+;et on fait ca pour tous les tools qui seront donc actifs

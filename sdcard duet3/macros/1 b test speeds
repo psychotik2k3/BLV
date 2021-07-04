@@ -1,0 +1,9 @@
+var speedIncrement=1200
+var currentSpeed=0
+while true
+	if (var.currentSpeed >12001)
+		abort "All done"
+	else
+		set var.currentSpeed=var.currentSpeed+var.speedIncrement
+		M117 {"speed = " ^ var.currentSpeed ^ " mm/min" }
+		M98 P"/macros/move_square" F{var.currentSpeed}

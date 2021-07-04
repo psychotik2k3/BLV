@@ -1,0 +1,2 @@
+M581 T4 P-1 	; delete trigger 4 is loaded
+M581 T5 P-1 	; delete trigger 5 is unloaded

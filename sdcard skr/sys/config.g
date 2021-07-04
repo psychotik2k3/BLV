@@ -28,7 +28,7 @@ M584 X0 Y1 Z2:4 E3                               ; set drive mapping
 M350 X16 Y16 Z16 E16 I1                          ; configure microstepping with interpolation
 ;M92 X200.00 Y200.00 Z400.00 E436.54         	 ; set steps per mm
 M92 X200.00 Y200.00 Z400.00 E424.91         	 ; set steps per mm original kit BMG
-;M92 X200.00 Y200.00 Z400.00 E400         	 	 ; set steps per mm bondtech LGX
+;M92 X200.00 Y200.00 Z400.00 E400         	 ; set steps per mm bondtech LGX
 
 M566 X700 Y700 Z24.00 E2000.00       		 	 ; set maximum instantaneous speed changes (mm/min)
 ;M566 X600 Y600 Z12 E2000						 ; from krazycubekreator discord
@@ -43,8 +43,8 @@ M208 X0 Y0 Z0 S1                                 ; set axis minima
 M208 X353 Y364 Z335 S0                           ; set axis maxima
 
 ; Endstops
-M574 X1 S1 P"xstop"                              ; configure active-high endstop for low end on X (endstop on x min) via pin xstop
-M574 Y2 S1 P"ystop"                              ; configure active-high endstop for high end on Y (endstop on y max) via pin ystop
+M574 X1 S1 P"xstop"                              ; configure active-high endstop for high end on X via pin xstop
+M574 Y2 S1 P"ystop"                              ; configure active-high endstop for high end on Y via pin ystop
 M574 Z1 S4										 ; configure z low position stop to sensorless
 M574 Z2 S4										 ; configure z high position (bed is down on core XY) to sensorless
 M915 P2:4 S-30 F0 R0
@@ -69,6 +69,10 @@ M557 X33:321 Y68:329 S32:29                       ; define mesh grid, warning no
 ;M557 X30:321 Y41:311 S72.5:67.5                       ; define mesh grid, warning nozzle coordinates 5x5 points
 ;M557 X30:320 Y41:311 S5:5  ; mesh point every 5mm
 
+; trying to set the ir probe status
+M950 J1 C"^ystopmax"
+M581 T4 P1 S1 R0
+M581 T5 P1 S0 R0
 ; Heaters
 M308 S0 P"e1temp" Y"thermistor" T10000 B3435   ; configure sensor 1 as thermistor on pin e0temp
 M308 S2 P"bedtemp" Y"thermistor" T100000 B4092   ; configure sensor 0 as thermistor on pin bedtemp
@@ -82,7 +86,6 @@ M143 H0 S120                                     ; set temperature limit for hea
 ;M308 S1 P"e0temp" Y"thermistor" T2500000 B6848  ; configure sensor 1 as thermistor on pin e0temp
 ;M308 S1 P"e0temp" Y"thermistor" T2500000 B2260 C-5.253069e-7   ; configure sensor 1 as thermistor on pin e0temp
 
-; mellow 450 degres thermistor
 ; mellow 450 degres thermistor
 M308 S1 P"e0temp" Y"thermistor" T3600000 B6453 C9.932858e-8   ; configure sensor 1 as thermistor on pin e0temp
 ;M308 S1 P"e0temp" Y"thermistor" T3600000 B5077  ; configure sensor 1 as thermistor on pin e0temp

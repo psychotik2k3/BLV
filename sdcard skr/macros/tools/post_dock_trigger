@@ -1,0 +1,3 @@
+M581 T4 P1 S1 R0	; trigger 4 is loaded
+M581 T5 P1 S0 R0	; trigger 5 is unloaded
+M582 T4 ; we check trigger 5 conditions and if true then execute it

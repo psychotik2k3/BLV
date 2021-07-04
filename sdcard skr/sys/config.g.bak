@@ -69,6 +69,10 @@ M557 X33:321 Y68:329 S32:29                       ; define mesh grid, warning no
 ;M557 X30:321 Y41:311 S72.5:67.5                       ; define mesh grid, warning nozzle coordinates 5x5 points
 ;M557 X30:320 Y41:311 S5:5  ; mesh point every 5mm
 
+; trying to set the ir probe status
+M950 J1 C"ystopmax"
+M581 T4 P1 S1 R0
+M581 T5 P1 S0 R0
 ; Heaters
 M308 S0 P"e1temp" Y"thermistor" T10000 B3435   ; configure sensor 1 as thermistor on pin e0temp
 M308 S2 P"bedtemp" Y"thermistor" T100000 B4092   ; configure sensor 0 as thermistor on pin bedtemp
@@ -127,4 +131,4 @@ M302 P1                                     ; allow extrude with cold temperatur
 
 ;M593 F20									; cancel ringing frequency 20 hz 80mm/sec / 4mm
 
-T0											; select tool 0
+;T0											; select tool 0
